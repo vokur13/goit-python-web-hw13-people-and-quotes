@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>New Quote</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+    <div>
+        <a href="{% url 'quotes:tag_new' %}">+ New Tag</a>
+    </div>
+    <div>
+        <a href="{% url 'quotes:author_new' %}">+ New Author</a>
+    </div>
+
+{% endblock content %}

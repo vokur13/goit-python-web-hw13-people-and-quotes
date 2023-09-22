@@ -1,0 +1,66 @@
+body {
+    font-family: "Helvetica Neue", 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+header {
+    border-bottom: 1px solid;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+header h1 a {
+    color: #4582ec;
+    text-decoration: none;
+}
+
+.nav-left {
+    margin-right: auto;
+}
+
+.nav-right {
+    display: flex;
+    padding-top: 2rem;
+}
+
+.quote-entry {
+    margin-bottom: 2rem;
+}
+
+.text {
+    font-style: italic;
+}
+
+.author {
+    font-weight: bold;
+    color: #3677E8;
+    font-size: 87%;
+}
+
+.author-link {
+    color: #4582ec;
+    text-decoration: none;
+}
+
+.author-link:hover,
+.author-link:focus {
+    text-decoration: underline;
+}
+
+.tag {
+    text-decoration: none;
+    background-color: red;
+}
+
+.tag:visited {
+    text-decoration: none;
+}
+
+.nav-auth {
+    margin-bottom: 2rem;
+    border: 1px solid tomato;
+}
+
+
+
+

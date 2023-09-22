@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load extract_tags %}
+
+{% block content %}
+
+    <h3>Viewing tag:
+        <span>{{ tag.tag }}</span>
+    </h3>
+
+    {% for quote in quote_list %}
+
+        <div class="card" style="margin-bottom: 1px">
+            <div class="card-body">
+
+                <div style="margin-bottom: 10px">
+                    <span class="fst-italic">{{ quote.quote }}</span>
+                </div>
+                <div>
+                         <span> by
+                            <small class="fw-bold">{{ quote.author }}</small>
+                            <a class="author-link" href="{% url 'quotes:author_detail' quote.author.slug %}">(about)</a>
+                        </span>
+                </div>
+
+                <div>Tags:
+                    {% for tag in quote.tags|tags %}
+                        <a class="badge bg-primary text-wrap" style="width: fit-content; text-decoration: none"
+                           href="{% url 'quotes:tag_detail' tag.slug %}">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+    <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+    </div>
+
+{% endblock content %}
