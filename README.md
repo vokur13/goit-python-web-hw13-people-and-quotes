@@ -1,1 +1,18 @@
 # goit-python-web-hw13-people-and-quotes
+
+.env variables:
+
+# Django
+DEBUG=True
+DJANGO_SECRET_KEY
+# DB
+DB_NAME
+DB_USER
+DB_PASSWORD
+DB_HOST
+DB_PORT
+# Email
+EMAIL_HOST
+EMAIL_PORT
+EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD
